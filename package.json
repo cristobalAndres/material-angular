@@ -8,11 +8,14 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --env=dev",
+    "local": "ng serve --env=local",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "tslint": "tslint .",
+    "e2e": "ng e2e",
+    "coverage": "rm -rf ./coverage && ng test --code-coverage",
+    "postinstall": "ng build --environment prod"
   },
   "private": true,
   "dependencies": {
@@ -87,5 +90,9 @@
     "ts-node": "2.0.0",
     "tslint": "4.5.0",
     "typescript": "2.4.2"
+  },
+  "engines": {
+    "node": "6.11.1",
+    "npm": "3.10.10"
   }
 }
